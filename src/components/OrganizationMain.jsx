@@ -14,6 +14,7 @@ const OrganizationMain = () => {
     .catch(console.log('Issue with fetchData'))
   };
 
+  console.log('test', data)
   useEffect(() => {
     fetchData()
   }, [])
