@@ -19,6 +19,19 @@ const OrganizationMain = () => {
     fetchData()
   }, [])
 
+  // Deconstruct data object 
+  const { id, name, html_url, is_verified, created_at, updated_at } = data;
+
+  return(
+    <div className='organization-info'>
+      <p>{id}</p>
+      <p>{name}</p>
+      <p>{html_url}</p>
+      <p>{String(is_verified)}</p>
+      <p>{created_at}</p>
+      <p>{updated_at}</p>
+    </div>
+  )
 }
 
 export { OrganizationMain }
