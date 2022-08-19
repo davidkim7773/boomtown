@@ -35,7 +35,7 @@ const OrganizationMain = () => {
 
   return(
     <div className='organization-info'>
-      <ul>
+      <ul className='list'>
         <li>{id}</li>
         <li>{name}</li>
         <li>{html_url}</li>
