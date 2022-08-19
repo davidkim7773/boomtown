@@ -19,17 +19,30 @@ const OrganizationMain = () => {
     fetchData()
   }, [])
 
+  // Use Helper function to clean up Created_at and updated_at
+  
+  const dateFunc = (str) => {
+    const newDate = new Date(str);
+    const year = newDate.getFullYear();
+    const month = newDate.getMonth()
+    const day = newDate.getDate();
+    const hyphenDate = [month, day, year].join('-')
+    return String(hyphenDate);
+  }  
+
   // Deconstruct data object 
   const { id, name, html_url, is_verified, created_at, updated_at } = data;
 
   return(
     <div className='organization-info'>
-      <p>{id}</p>
-      <p>{name}</p>
-      <p>{html_url}</p>
-      <p>{String(is_verified)}</p>
-      <p>{created_at}</p>
-      <p>{updated_at}</p>
+      <ul>
+        <li>{id}</li>
+        <li>{name}</li>
+        <li>{html_url}</li>
+        <li>{String(is_verified)}</li>
+        <li>Created At: {dateFunc(created_at)}</li>
+        <li>Updated At: {dateFunc(updated_at)}</li>
+      </ul>
     </div>
   )
 }
