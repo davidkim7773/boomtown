@@ -3,22 +3,26 @@ import { useState, useEffect } from 'react';
 const OrganizationMain = () => {
   const apiEndpoint = 'https://api.github.com/orgs/boomtownroi';
 
-  // Set a default value of state
+  // Set a default value of state; initialized if we want to prop drill down data to child components.
   const [data, setData] = useState({});
 
-  // Create a function to run everytime the component mounts on the dom.
-  const fetchData = () => {
-    fetch(apiEndpoint)
-    .then(res => res.json())
-    .then(data => setData(data))
-    .catch(console.log('Issue with fetchData'))
-  };
+  async function fetchData() {
+    const res = await fetch(apiEndpoint);
+    // Catch errors
+    if (!res.ok) {
+      const msg = `An error has occured with fetchData ${res.status}`
+      throw new Error(msg)
+    }
+    const newData = await res.json();
+    setData(newData)
+}
 
   console.log('test', data)
   useEffect(() => {
     fetchData()
   }, [])
 
+  if (data.length <= 0) return null;
   // Use Helper function to clean up Created_at and updated_at
   
   const dateFunc = (str) => {
