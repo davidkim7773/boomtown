@@ -36,10 +36,10 @@ const OrganizationMain = () => {
   return(
     <div className='organization-info'>
       <ul className='list'>
-        <li>{id}</li>
-        <li>{name}</li>
-        <li>{html_url}</li>
-        <li>{String(is_verified)}</li>
+        <li>Id: {id}</li>
+        <li>Company Name: {name}</li>
+        <li>URL: {html_url}</li>
+        <li>Verified: {String(is_verified)}</li>
         <li>Created At: {dateFunc(created_at)}</li>
         <li>Updated At: {dateFunc(updated_at)}</li>
       </ul>
