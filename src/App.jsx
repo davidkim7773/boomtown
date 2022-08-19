@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import { OrganizationMain } from './components/OrganizationMain'
+import { useState, useEffect } from 'react'
+import { MainContainer } from './containers/MainContainer'
+import { Repos } from './components/Repos'
 
 const App = () => {
 
   return (
     <div className="App">
-      <OrganizationMain/>
+      <MainContainer/>
     </div>
   )
 }

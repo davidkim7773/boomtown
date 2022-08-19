@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
 
-const Repos = () => {
-
+const Repos = (props) => {
+  
+  
 }
 
 export { Repos }

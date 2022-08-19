@@ -1,30 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const OrganizationMain = () => {
-  const apiEndpoint = 'https://api.github.com/orgs/boomtownroi';
+const OrganizationMain = (props) => {
 
-  // Set a default value of state; initialized if we want to prop drill down data to child components.
-  const [data, setData] = useState({});
+  // Deconstruct Props Obj
+  const { apiData } = props;
 
-  async function fetchData() {
-    const res = await fetch(apiEndpoint);
-    // Catch errors
-    if (!res.ok) {
-      const msg = `An error has occured with fetchData ${res.status}`
-      throw new Error(msg)
-    }
-    const newData = await res.json();
-    setData(newData)
-}
-
-  console.log('test', data)
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  if (data.length <= 0) return null;
-  // Use Helper function to clean up Created_at and updated_at
-  
   const dateFunc = (str) => {
     const newDate = new Date(str);
     const year = newDate.getFullYear();
@@ -35,7 +15,7 @@ const OrganizationMain = () => {
   }  
 
   // Deconstruct data object 
-  const { id, name, html_url, is_verified, created_at, updated_at } = data;
+  const { id, name, html_url, is_verified, created_at, updated_at } = apiData;
 
   return(
     <div className='organization-info'>
