@@ -44,12 +44,28 @@ const Repos = (props) => {
     setRepoData(repoFetchData);
   }
 
-  // Deconstruct finalRepoData that we need.
-  const { id, name, html_url, description, language, created_at, updated_at, pushed_at } = finalRepoData;
+  const repoComponentArr = [];
+  // For loop through data array to create an array of components to display.
+  for (let i = 0; i < finalRepoData.length; i++) {
+    // Declare Constant for declarative code
+    const el = finalRepoData[i];
+    repoComponentArr.push(
+    <ul className='repoDataList' key={i}>
+      <li><strong>ID: </strong>{String(el.id)}</li>
+      <li><strong>Name: </strong>{el.name}</li>
+      <li><strong>HTML: </strong>{el.html_url}</li>
+      <li><strong>Description: </strong>{el.description}</li>
+      <li><strong>Language: </strong>{el.language}</li>
+      <li><strong>Created At: </strong>{el.created_at}</li>
+      <li><strong>Updated At: </strong>{el.updated_at}</li>
+      <li><strong>Pushed At: </strong>{el.pushed_at}</li>
+    </ul>
+    )
+  }
   
   return (
     <div className='repos'>
-      <h1>test</h1>
+      {repoComponentArr}
     </div>
   )
 }
