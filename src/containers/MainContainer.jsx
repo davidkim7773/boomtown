@@ -15,6 +15,7 @@ const MainContainer = () => {
     fetchApiData();
   }, []);
 
+  //Async function to fetch initial api data
   async function fetchApiData() {
     const res = await fetch(apiEndpoint, {
       headers : { 
@@ -48,7 +49,6 @@ const MainContainer = () => {
       {renderRepo()}
     </div>
   )
-
 }
 
 export { MainContainer };
