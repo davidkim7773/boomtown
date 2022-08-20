@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react';
 const Repos = (props) => {
 
   // Deconstruct props ojbect with repoUrl
-
   const { repoUrl } = props;
   
   // Deconstruct Repo Data that we need.
-
   const { id, name, html_url, description, language, created_at, updated_at, pushed_at } = repoData
+
   // Initalize Repo Component State;
   const [repoData, setRepoData] = useState({});
 
@@ -17,6 +16,7 @@ const Repos = (props) => {
     fetchRepoData();
   }, []);
 
+  // Async Function to fetch repo data
   async function fetchRepoData () {
     const res = await fetch(repoUrl, {
       headers : { 
