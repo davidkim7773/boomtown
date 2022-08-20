@@ -10,6 +10,11 @@ const MainContainer = () => {
   const [data, setApiData] = useState({});
   const [repo, setRepoUrl] = useState('');
 
+  // Initial Data Fetch
+  useEffect(() => {
+    fetchApiData();
+  }, []);
+
   async function fetchApiData() {
     const res = await fetch(apiEndpoint, {
       headers : { 
@@ -30,25 +35,17 @@ const MainContainer = () => {
     }
   }
 
-  useEffect(() => {
-    fetchApiData();
-  }, []);
-  
+  // Conditional Rendering Function
+  function renderRepo () {
+    if (repo.length > 0) return <Repos repoUrl={repo}/>
+  }
+
   return (
     <div className='main-container'>
       <OrganizationMain
         apiData={data}
       />
-      <>
-      {repo.length > 0 ? 
-      
-      <Repos
-        repoUrl={repo}
-      />
-      :
-      <p></p>
-      }
-      </>
+      {renderRepo()}
     </div>
   )
 
