@@ -23,7 +23,7 @@ const MainContainer = () => {
         'Accept': 'application/json'
        }
     });
-
+    //Catch Errors
     if (res.ok) {
       const newData = await res.json();
       setApiData(newData)
