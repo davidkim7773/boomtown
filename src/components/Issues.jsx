@@ -1,0 +1,5 @@
+const Issues = () => {
+
+}
+
+export { Issues };
