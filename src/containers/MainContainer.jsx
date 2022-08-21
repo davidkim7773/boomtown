@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { OrganizationMain } from '../components/OrganizationMain';
 import { Repos } from '../components/Repos'
+import { Members } from '../components/Members'
 
 const MainContainer = () => {
 
@@ -8,8 +9,11 @@ const MainContainer = () => {
 
   // Set a default value of state; initialized if we want to prop drill down data to child components.
   const [data, setApiData] = useState({});
-  const [repo, setRepoUrl] = useState('');
-
+  const [repoUrl, setRepoUrl] = useState('');
+  const [eventUrl, setEventUrl] = useState('');
+  const [membersUrl, setMembersUrl] = useState ('');
+  const [publicMembersUrl, setPublicMembersUrl] = useState('');
+  
   // Initial Data Fetch
   useEffect(() => {
     fetchApiData();
@@ -18,7 +22,7 @@ const MainContainer = () => {
   //Async function to fetch initial api data
   async function fetchApiData() {
     const res = await fetch(apiEndpoint, {
-      headers : { 
+      headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
        }
@@ -26,8 +30,11 @@ const MainContainer = () => {
     //Catch Errors
     if (res.ok) {
       const newData = await res.json();
-      setApiData(newData)
-      setRepoUrl(newData.repos_url)
+      setApiData(newData);
+      setRepoUrl(newData.repos_url);
+      setEventUrl(newData.events_url);
+      setMembersUrl(newData.members_url);
+      setPublicMembersUrl(newData.public_members_url);
     }
     // Catch errors
     else if (!res.ok) {
@@ -38,7 +45,7 @@ const MainContainer = () => {
 
   // Conditional Rendering Function
   function renderRepo () {
-    if (repo.length > 0) return <Repos repoUrl={repo}/>
+    if (repoUrl.length > 0) return <Repos repoUrl={repoUrl}/>
   }
 
   return (
@@ -47,6 +54,9 @@ const MainContainer = () => {
         apiData={data}
       />
       {renderRepo()}
+      <Members
+        membersApi={membersUrl}
+      />
     </div>
   )
 }

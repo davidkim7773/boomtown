@@ -31,7 +31,6 @@ const Repos = (props) => {
     }
 
   // Construct a new array of Objects to hold distinguish the data that we want.
-
   const finalRepoData = repoData.map((el) => {
     return {
       id: el.id,
@@ -45,28 +44,7 @@ const Repos = (props) => {
     }
   })
 
-//   function constructFinalRepoData (data) {
-
-//     if (data.length > 0) {
-//     const newData = data.map((el) => {
-//       return {
-//         id: el.id,
-//         name: el.name,
-//         html_url: el.html_url,
-//         description: el.description,
-//         language: el.language,
-//         created_at: el.created_at,
-//         updated_at: el.updated_at,
-//         pushed_at: el.pushed_at
-//       }
-//     })
-//   } 
-//     return newData;
-// }
-
-
-  // console.log('finalRepoData', finalRepoData)
-
+  // Declare an array for our components
   const repoComponentArr = [];
   // For loop through data array to create an array of components to display.
   for (let i = 0; i < finalRepoData.length; i++) {
