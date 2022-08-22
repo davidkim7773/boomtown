@@ -7,6 +7,7 @@ const Repos = (props) => {
 
   // Initalize Repo Component State;
   const [repoData, setRepoData] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
   
   // Repo Date Fetch
   useEffect(() => {
@@ -21,11 +22,13 @@ const Repos = (props) => {
           'Accept': 'application/json'
          }
       });
+
       // Catch errors
       if (!res.ok) {
         const errMsg = `An error has occured with fetchRepoData ${res.status}`
         throw new Error(errMsg);
       }
+
       const repoFetchData = await res.json();
       setRepoData(repoFetchData);
     }
@@ -44,23 +47,25 @@ const Repos = (props) => {
     }
   })
 
-  // Declare an array for our components
+  // Create an array of components using a forloop
   const repoComponentArr = [];
+
   // For loop through data array to create an array of components to display.
   for (let i = 0; i < finalRepoData.length; i++) {
+
     // Declare Constant for declarative code
     const el = finalRepoData[i];
     repoComponentArr.push(
-    <ul className='repoDataList' key={i}>
-      <li><strong>ID: </strong>{String(el.id)}</li>
-      <li><strong>Name: </strong>{el.name}</li>
-      <li><strong>HTML: </strong>{el.html_url}</li>
-      <li><strong>Description: </strong>{el.description}</li>
-      <li><strong>Language: </strong>{el.language}</li>
-      <li><strong>Created At: </strong>{el.created_at}</li>
-      <li><strong>Updated At: </strong>{el.updated_at}</li>
-      <li><strong>Pushed At: </strong>{el.pushed_at}</li>
-    </ul>
+      <ul className='repoDataList' key={i}>
+        <li><strong>ID: </strong>{String(el.id)}</li>
+        <li><strong>Name: </strong>{el.name}</li>
+        <li><strong>HTML: </strong>{el.html_url}</li>
+        <li><strong>Description: </strong>{el.description}</li>
+        <li><strong>Language: </strong>{el.language}</li>
+        <li><strong>Created At: </strong>{el.created_at}</li>
+        <li><strong>Updated At: </strong>{el.updated_at}</li>
+        <li><strong>Pushed At: </strong>{el.pushed_at}</li>
+      </ul>
     )
   }
   

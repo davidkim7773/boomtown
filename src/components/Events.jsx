@@ -7,6 +7,7 @@ const Events = (props) => {
 
   // Initialize Events Component State
   const [eventsData, setEventsData] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
 
   // Use Effect call on component mount
   useEffect(() => {
@@ -32,7 +33,18 @@ const Events = (props) => {
     setEventsData(eventsFetchData);
   };
 
-  console.log('eventsData', eventsData);
+  // New Array of objects holding the key value pairs we want.
+  const finalEventData = eventsData.map((el) => {
+    return {
+      id: el.id,
+      type: el.type,
+      repo_name: el.repo.name,
+      repo_url: el.repo.url,
+      created_at: el.created_at
+    }
+  })
+
+  console.log('finalEventData', finalEventData);
 }
 
 export { Events }
