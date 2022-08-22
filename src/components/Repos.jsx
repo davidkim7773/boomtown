@@ -69,7 +69,6 @@ const Repos = (props) => {
     )
   }
   
-  console.log(clicked)
   return (
     <div className='repos'>
       <button onClick={() => setClicked((prevClicked) => !prevClicked)}>Repos</button>

@@ -64,6 +64,7 @@ const Events = (props) => {
   
   return (
     <div className='events'>
+      <button onClick={() => setClicked((prevClicked) => !prevClicked)}>Events</button>
       {eventsComponentArr}
     </div>
   )

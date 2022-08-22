@@ -61,13 +61,7 @@ const MainContainer = () => {
 
   return (
     <div className='main-container'>
-      <OrganizationMain
-        apiData={data}
-      />
       {conditionalRenderFunc()}
-      <Members
-        membersApi={membersUrl}
-      />
     </div>
   )
 }
