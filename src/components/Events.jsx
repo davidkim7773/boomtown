@@ -34,7 +34,7 @@ const Events = (props) => {
   };
 
   // New Array of objects holding the key value pairs we want.
-  const finalEventData = eventsData.map((el) => {
+  const finalEventsData = eventsData.map((el) => {
     return {
       id: el.id,
       type: el.type,
@@ -44,7 +44,29 @@ const Events = (props) => {
     }
   })
 
-  console.log('finalEventData', finalEventData);
+  // Create an array of components using a forLoop.
+  const eventsComponentArr = [];
+  
+  // Use a For loop
+  for (let i = 0; i < finalEventsData.length; i++) {
+    // Declarative const
+    const el = finalEventsData[i];
+    eventsComponentArr.push(
+      <ul className='eventsDataList' key={i}>
+        <li><strong>ID: </strong>{el.id}</li>
+        <li><strong>Type: </strong>{el.type}</li>
+        <li><strong>Repo Name: </strong>{el.repo_name}</li>
+        <li><strong>Repo URL: </strong>{el.repo_url}</li>
+        <li><strong>Created At: </strong>{el.created_at}</li>
+      </ul>
+    )
+  }
+  
+  return (
+    <div className='events'>
+      {eventsComponentArr}
+    </div>
+  )
 }
 
 export { Events }
