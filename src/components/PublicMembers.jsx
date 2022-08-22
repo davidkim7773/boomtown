@@ -68,9 +68,15 @@ const PublicMembers = (props) => {
       </ul>
     )
   }
+
+  // Rendering Function for our components to appear depending on button Click
+  function buttonRenderPublicMembers () {
+    if (clicked) return <div className='publicMembers-components'>{publicMembersComponentArr}</div>
+  }
   return (
     <div className='publicMembers'>
-      {publicMembersComponentArr}
+      <button onClick={() => setClicked((prevClicked) => !prevClicked)}>Public Members</button>
+      {buttonRenderPublicMembers()}
     </div>
   )
 }

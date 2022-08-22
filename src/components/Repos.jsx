@@ -56,7 +56,7 @@ const Repos = (props) => {
     // Declare Constant for declarative code
   const el = finalRepoData[i];
     repoComponentArr.push(
-      <ul className='repoDataList'>
+      <ul className='repoDataList' key={i}>
         <li><strong>ID: </strong>{String(el.id)}</li>
         <li><strong>Name: </strong>{el.name}</li>
         <li><strong>HTML: </strong>{el.html_url}</li>
@@ -71,13 +71,13 @@ const Repos = (props) => {
 
   // Rendering Function for our components to appear depending on button Click
   function buttonRenderRepos () {
-      if (clicked) return {repoComponentArr}
+      if (clicked) return <div className='repo-components'>{repoComponentArr}</div>
     }
 
   return (
     <div className='repos'>
       <button onClick={() => setClicked((prevClicked) => !prevClicked)}>Repos</button>
-      {buttonRenderRepos}
+      {buttonRenderRepos()}
     </div>
   )
 }

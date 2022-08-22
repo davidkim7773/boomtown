@@ -61,11 +61,16 @@ const Events = (props) => {
       </ul>
     )
   }
+
+   // Rendering Function for our components to appear depending on button Click
+   function buttonRenderEvents () {
+    if (clicked) return <div className='events-components'>{eventsComponentArr}</div>
+  }
   
   return (
     <div className='events'>
       <button onClick={() => setClicked((prevClicked) => !prevClicked)}>Events</button>
-      {eventsComponentArr}
+      {buttonRenderEvents()}
     </div>
   )
 }

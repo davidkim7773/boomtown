@@ -69,10 +69,15 @@ const Members = (props) => {
     )
   }
 
+   // Rendering Function for our components to appear depending on button Click
+   function buttonRenderMembers () {
+    if (clicked) return <div className='members-components'>{membersComponentArr}</div>
+  }
+
   return (
     <div className='members'>
-      <button onClick={() => setCLicked((prevClicked) => !prevClicked)}>Members</button>
-      {membersComponentArr}
+      <button onClick={() => setClicked((prevClicked) => !prevClicked)}>Members</button>
+      {buttonRenderMembers()}
     </div>
   )
 }
