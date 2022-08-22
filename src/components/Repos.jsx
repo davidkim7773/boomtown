@@ -23,8 +23,8 @@ const Repos = (props) => {
       });
       // Catch errors
       if (!res.ok) {
-        const msg = `An error has occured with fetchRepoData ${res.status}`
-        throw new Error(msg);
+        const errMsg = `An error has occured with fetchRepoData ${res.status}`
+        throw new Error(errMsg);
       }
       const repoFetchData = await res.json();
       setRepoData(repoFetchData);
