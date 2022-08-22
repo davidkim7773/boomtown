@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
 
 const Repos = (props) => {
 
@@ -76,7 +77,7 @@ const Repos = (props) => {
 
   return (
     <div className='repos'>
-      <button onClick={() => setClicked((prevClicked) => !prevClicked)}>Repos</button>
+       <Button variant='outlined' onClick={() => setClicked((prevClicked) => !prevClicked)}>Repos</Button>
       {buttonRenderRepos()}
     </div>
   )

@@ -1,18 +1,47 @@
-.list {
-  list-style: none;
+// NavBar Component CSS
+.navBar {
+  border-bottom: 1px solid 	#D3D3D3;
+  overflow: hidden;
 }
 
-// Repos Component CSS
+.about-me {
+  float: right;
+}
+
+// Repos Component CSSs
+.repos {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .repoDataList {
   list-style: none;
+  display: flex;
+  flex-direction: row;
 }
 
 // Events Component CSS
+.events {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .eventsDataList {
   list-style: none;
 }
 
 // Members Component CSS
+.members {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .membersDataList {
   list-style: none;
+}
+
+// Public Members Component CSS
+.publicMembers {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
