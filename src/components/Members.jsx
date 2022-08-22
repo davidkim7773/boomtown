@@ -6,7 +6,8 @@ const Members = (props) => {
   const { membersUrl } = props;
 
   // Initialize Members Component State
-  const [ membersData, setMembersData ] = useState({});
+  const [membersData, setMembersData] = useState([]);
+  const [clicked, setClicked] = useState(false);
 
   // Helper Function to remove the random members part of the Members and Public Members URL
   function updateUrl (str) {

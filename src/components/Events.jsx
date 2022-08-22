@@ -7,8 +7,8 @@ const Events = (props) => {
 
   // Initialize Events Component State
   const [eventsData, setEventsData] = useState([]);
-  const [isClicked, setIsClicked] = useState(false);
-
+  const [clicked, setClicked] = useState(false);
+  
   // Use Effect call on component mount
   useEffect(() => {
     fetchEventsData()

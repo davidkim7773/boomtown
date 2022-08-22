@@ -7,7 +7,7 @@ const Repos = (props) => {
 
   // Initalize Repo Component State;
   const [repoData, setRepoData] = useState([]);
-  const [isClicked, setIsClicked] = useState(false);
+  const [clicked, setClicked] = useState(false);
   
   // Repo Date Fetch
   useEffect(() => {
@@ -69,8 +69,10 @@ const Repos = (props) => {
     )
   }
   
+  console.log(clicked)
   return (
     <div className='repos'>
+      <button onClick={() => setClicked((prevClicked) => !prevClicked)}>Repos</button>
       {repoComponentArr}
     </div>
   )
