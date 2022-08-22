@@ -47,7 +47,7 @@ const MainContainer = () => {
 
   // Conditional Rendering Function
   function conditionalRenderFunc () {
-    if (repoUrl.length > 0 && eventsUrl.length> 0) {
+    if (repoUrl.length > 0) {
     return (
       <div className='main-components'>
         <Repos repoUrl={repoUrl}/>
