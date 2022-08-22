@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { OrganizationMain } from '../components/OrganizationMain';
-import { Repos } from '../components/Repos'
-import { Members } from '../components/Members'
+import { Repos } from '../components/Repos';
+import { Members } from '../components/Members';
+import { Events } from '../components/Events';
+import { PublicMembers } from '../components/PublicMembers';
 
 const MainContainer = () => {
 
@@ -10,7 +12,7 @@ const MainContainer = () => {
   // Set a default value of state; initialized if we want to prop drill down data to child components.
   const [data, setApiData] = useState({});
   const [repoUrl, setRepoUrl] = useState('');
-  const [eventUrl, setEventUrl] = useState('');
+  const [eventsUrl, setEventsUrl] = useState('');
   const [membersUrl, setMembersUrl] = useState ('');
   const [publicMembersUrl, setPublicMembersUrl] = useState('');
   
@@ -32,7 +34,7 @@ const MainContainer = () => {
       const newData = await res.json();
       setApiData(newData);
       setRepoUrl(newData.repos_url);
-      setEventUrl(newData.events_url);
+      setEventsUrl(newData.events_url);
       setMembersUrl(newData.members_url);
       setPublicMembersUrl(newData.public_members_url);
     }
@@ -44,8 +46,17 @@ const MainContainer = () => {
   }
 
   // Conditional Rendering Function
-  function renderRepo () {
-    if (repoUrl.length > 0) return <Repos repoUrl={repoUrl}/>
+  function conditionalRenderFunc () {
+    if (repoUrl.length > 0 && eventsUrl.length> 0) {
+    return (
+      <div className='main-components'>
+        <Repos repoUrl={repoUrl}/>
+        <Events eventsUrl={eventsUrl}/>
+        <Members membersUrl={membersUrl}/>
+        <PublicMembers publicMembersUrl={publicMembersUrl}/>
+      </div>
+      )
+    }
   }
 
   return (
@@ -53,7 +64,7 @@ const MainContainer = () => {
       <OrganizationMain
         apiData={data}
       />
-      {renderRepo()}
+      {conditionalRenderFunc()}
       <Members
         membersApi={membersUrl}
       />

@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 
 const Members = (props) => {
 
-  const { membersApi } = props;
+  // Deconstruct membersUrl
+  const { membersUrl } = props;
 
-  console.log(updateUrl(membersApi));
   // Initialize Members Component State
   const [ membersData, setMembersData ] = useState({});
 

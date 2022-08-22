@@ -5,14 +5,14 @@ const OrganizationMain = (props) => {
   // Deconstruct Props Obj
   const { apiData } = props;
 
-  const dateFunc = (str) => {
+  function dateFunc(str) {
     const newDate = new Date(str);
     const year = newDate.getFullYear();
     const month = newDate.getMonth()
     const day = newDate.getDate();
     const hyphenDate = [month, day, year].join('-')
     return String(hyphenDate);
-  }  
+  };
 
   // Deconstruct data object 
   const { id, name, html_url, is_verified, created_at, updated_at } = apiData;
