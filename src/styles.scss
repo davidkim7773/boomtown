@@ -1,5 +1,4 @@
 //MainContainer CS
-
 .main-container {
   text-align: center;
 }
@@ -36,6 +35,10 @@
 
 .repos li {
   width: auto;
+}
+
+.updatedAt {
+  color: #0096FF;
 }
 
 // Events Component CSS
@@ -104,11 +107,3 @@
   margin: 5px 10px 5px 0;
   list-style: none;
 }
-
-// Creating Individual Containers around Each ul list
-// ul {
-//   display: inline-block;
-//   border: 1px solid #000;
-//   width: fit-content;
-//   height: fit-content;
-// }

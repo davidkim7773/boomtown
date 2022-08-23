@@ -70,7 +70,7 @@ const Repos = (props) => {
         <li><strong>Description: </strong>{el.description}</li>
         <li><strong>Language: </strong>{el.language}</li>
         <li><strong>Created At: </strong>{dateFunc(el.created_at)}</li>
-        <li><strong>Updated At: </strong>{dateFunc(el.updated_at)}</li>
+        <li className='updatedAt'><strong>Updated At: </strong><i>{dateFunc(el.updated_at)}</i></li>
         <li><strong>Pushed At: </strong>{dateFunc(el.pushed_at)}</li>
       </ul>
     )
