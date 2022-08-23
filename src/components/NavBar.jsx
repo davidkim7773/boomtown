@@ -5,7 +5,7 @@ const NavBar = (props) => {
   // Deconstruct Is Open 
   const { isOpen, setIsOpen } = props;
 
-  // Function to change Booelean tate
+  // Function to change Booelean state
   function toggleAboutMe () {
       setIsOpen(!isOpen)
   }
