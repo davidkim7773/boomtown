@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-    <img src='https://avatars.githubusercontent.com/u/1214096?v=4'>
+    <img src='https://avatars.githubusercontent.com/u/1214096?v=4'/>
     <br>
     <br>
   BoomTown Take Home Assessment
@@ -26,7 +26,7 @@ I unfortunately became ill right when I received the take home and had some diff
 
 ## Component Flow
 
-<img src='./public/data-flow.jpg'>
+<img src='./public/data-flow.jpg'/>
 
 <br>
 
@@ -34,7 +34,7 @@ I unfortunately became ill right when I received the take home and had some diff
 
 ### Clone this repository
 ```bash
-git clone https://github.com/codejunkie7/boomtown.gits
+git clone https://github.com/codejunkie7/boomtown.git
 ```
 
 ### Install dependencies
