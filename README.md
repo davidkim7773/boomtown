@@ -4,8 +4,6 @@
     <br>
     <br>
   BoomTown Take Home Assessment
-    <br>
-  <br>
 </h1>
 
 ## Description
