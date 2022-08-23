@@ -34,6 +34,12 @@ const Events = (props) => {
     setEventsData(eventsFetchData);
   };
 
+  // Date String Editing Function
+  function dateFunc (str) {
+    const newStr = str.replace('T', ' ').replace('Z', '');
+    return newStr;
+  }
+
   // New Array of objects holding the key value pairs we want.
   const finalEventsData = eventsData.map((el) => {
     return {
@@ -58,7 +64,7 @@ const Events = (props) => {
         <li><strong>Type: </strong>{el.type}</li>
         <li><strong>Repo Name: </strong>{el.repo_name}</li>
         <li><strong>Repo URL: </strong>{el.repo_url}</li>
-        <li><strong>Created At: </strong>{el.created_at}</li>
+        <li><strong>Created At: </strong>{dateFunc(el.created_at)}</li>
       </ul>
     )
   }

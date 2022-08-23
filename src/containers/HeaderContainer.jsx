@@ -1,9 +1,13 @@
 import { NavBar } from '../components/NavBar'
 
-const HeaderContainer = () => {
+const HeaderContainer = (props) => {
+
+  // Deconstruct Props
+  const { isOpen, setIsOpen } = props;
 
   return (
-    <NavBar/>
+    <NavBar
+    />
   )
 }
 

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { OrganizationMain } from '../components/OrganizationMain';
 import { Repos } from '../components/Repos';
 import { Members } from '../components/Members';
 import { Events } from '../components/Events';
 import { PublicMembers } from '../components/PublicMembers';
+import { AboutMe } from '../components/AboutMe';
 
 const MainContainer = () => {
 
@@ -15,7 +15,7 @@ const MainContainer = () => {
   const [eventsUrl, setEventsUrl] = useState('');
   const [membersUrl, setMembersUrl] = useState ('');
   const [publicMembersUrl, setPublicMembersUrl] = useState('');
-  
+
   // Initial Data Fetch
   useEffect(() => {
     fetchApiData();

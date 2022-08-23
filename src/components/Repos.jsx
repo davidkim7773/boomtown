@@ -34,6 +34,12 @@ const Repos = (props) => {
       setRepoData(repoFetchData);
     }
 
+  // Date String Editing Function
+  function dateFunc (str) {
+      const newStr = str.replace('T', ' ').replace('Z', '');
+      return newStr;
+  }
+
   // Construct a new array of Objects to hold distinguish the data that we want.
   const finalRepoData = repoData.map((el) => {
     return {
@@ -63,9 +69,9 @@ const Repos = (props) => {
         <li><strong>HTML: </strong>{el.html_url}</li>
         <li><strong>Description: </strong>{el.description}</li>
         <li><strong>Language: </strong>{el.language}</li>
-        <li><strong>Created At: </strong>{el.created_at}</li>
-        <li><strong>Updated At: </strong>{el.updated_at}</li>
-        <li><strong>Pushed At: </strong>{el.pushed_at}</li>
+        <li><strong>Created At: </strong>{dateFunc(el.created_at)}</li>
+        <li><strong>Updated At: </strong>{dateFunc(el.updated_at)}</li>
+        <li><strong>Pushed At: </strong>{dateFunc(el.pushed_at)}</li>
       </ul>
     )
   }
