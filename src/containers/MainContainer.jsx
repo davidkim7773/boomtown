@@ -3,7 +3,6 @@ import { Repos } from '../components/Repos';
 import { Members } from '../components/Members';
 import { Events } from '../components/Events';
 import { PublicMembers } from '../components/PublicMembers';
-import { AboutMe } from '../components/AboutMe';
 
 const MainContainer = () => {
 
