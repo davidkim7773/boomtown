@@ -1,11 +1,23 @@
+//MainContainer CS
+
+.main-container {
+  text-align: center;
+}
+
 // NavBar Component CSS
 .navBar {
   border-bottom: 1px solid 	#D3D3D3;
   overflow: hidden;
 }
 
-.about-me-button {
+.navBar-img {
+  height: 4em;
+  width: 4em;
+}
+
+.button-div {
   float: right;
+  margin-top: 12px;
 }
 
 // About me Section
@@ -34,8 +46,8 @@
 
 // Repos Component CSSs
 .repos {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .repos ul {
@@ -59,8 +71,8 @@
 
 // Events Component CSS
 .events {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .events ul {
@@ -80,8 +92,8 @@
 
 // Members Component CSS
 .members {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .members img {
@@ -106,8 +118,8 @@
 
 // Public Members Component CSS
 .publicMembers {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .publicMembers img {

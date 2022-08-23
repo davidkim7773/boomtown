@@ -14,7 +14,10 @@ const NavBar = (props) => {
 
   return (
     <div className='navBar'>
+      <img className='navBar-img' src='https://avatars.githubusercontent.com/u/1214096?v=4/'/>
+      <div className='button-div'>
       <Button className='about-me-button' variant='text' onClick={() => toggleAboutMe()}>About Me</Button>
+      </div>
     </div>
   )
 }
