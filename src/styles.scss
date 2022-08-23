@@ -38,8 +38,23 @@
   margin-bottom: 5px;
 }
 
-.repoDataList {
+.repos ul {
+  display: inline-block;
+  align-items: center;
+  border: 1px solid #000;
+  vertical-align: top;
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  padding: 1.5em 0 0 0;
+  margin-right: 10px;
+  margin-top: 1em;
+  margin-bottom: 5px;
   list-style: none;
+}
+
+.repos li {
+  width: auto;
 }
 
 // Events Component CSS
@@ -48,7 +63,18 @@
   margin-bottom: 5px;
 }
 
-.eventsDataList {
+.events ul {
+  display: inline-block;
+  align-items: center;
+  border: 1px solid #000;
+  vertical-align: top;
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  padding: 25px 0 0 0;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   list-style: none;
 }
 
@@ -58,7 +84,23 @@
   margin-bottom: 5px;
 }
 
-.membersDataList {
+.members img {
+  height: 125px;
+  width: 125px;
+}
+
+.members ul {
+  display: inline-block;
+  align-items: center;
+  border: 1px solid #000;
+  vertical-align: top;
+  width: 500px;
+  height: fit-content;
+  text-align: center;
+  padding: 15px 0 15px 0;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   list-style: none;
 }
 
@@ -68,8 +110,30 @@
   margin-bottom: 5px;
 }
 
-// Creating Individual Containers around Each ul list
-ul {
-  display: inline-block;
-  border: 1px solid #000;
+.publicMembers img {
+  height: 125px;
+  width: 125px;
 }
+
+.publicMembers ul {
+  display: inline-block;
+  align-items: center;
+  border: 1px solid #000;
+  vertical-align: top;
+  width: 500px;
+  height: fit-content;
+  text-align: center;
+  padding: 15px 0 15px 0;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+// Creating Individual Containers around Each ul list
+// ul {
+//   display: inline-block;
+//   border: 1px solid #000;
+//   width: fit-content;
+//   height: fit-content;
+// }

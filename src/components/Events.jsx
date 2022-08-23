@@ -61,7 +61,7 @@ const Events = (props) => {
     eventsComponentArr.push(
       <ul className='eventsDataList' key={i}>
         <li><strong>ID: </strong>{el.id}</li>
-        <li><strong>Type: </strong>{el.type}</li>
+        <li><strong>Type: </strong>{el.type}</li> 
         <li><strong>Repo Name: </strong>{el.repo_name}</li>
         <li><strong>Repo URL: </strong>{el.repo_url}</li>
         <li><strong>Created At: </strong>{dateFunc(el.created_at)}</li>
@@ -77,7 +77,9 @@ const Events = (props) => {
   return (
     <div className='events'>
       <Button className='events-button' variant='outlined' onClick={() => setClicked((prevClicked) => !prevClicked)}>Events</Button>
+      <div className='ul-list'>
       {buttonRenderEvents()}
+      </div>
     </div>
   )
 }
